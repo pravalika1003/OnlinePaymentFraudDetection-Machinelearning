@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Online Payment Fraud Detection</title>
+  <style>
+    body {
+        background-color: #778899;; /* Replace with your desired color */
+        color: #333; /* Optional: Set a default text color */
+        margin: 0; /* Optional: Remove default margin */
+    }
+</style>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="login">
+    <h1 style="font-size:50px; text-align:center;">Online Payment Fraud Detection</h1>
+    <p style="font-size:15px; text-align:center;">Onlinе paymеnt fraud is a sеrious and growing problem in thе digital world.<br>Paymеnt fraud is a type of financial fraud or online payment scam where fraudsters use unauthorised methods to steal money or sensitive financial information.<br></p>
+    <hr>
+    <p style="text-align:center;">Enter the corresponding number for the type of your account</p>
+    <p style="text-align:center;">CASH_OUT: 1<br>PAYMENT: 2<br>CASH_IN: 3<br>TRANSFER: 4<br>DEBIT: 5</p>
+    <form style="text-align:center;" action="{{ url_for('predict') }}" method="post">
+      <input type="text" name="type" placeholder="Type" required="required" />
+      <input type="text" name="amount" placeholder="Amount" required="required" />
+      <input type="text" name="oldbalanceOrg" placeholder="Old Balance" required="required" />
+      <input type="text" name="newbalanceOrig" placeholder="New Balance" required="required" />
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <br>
+    <br>
+    <p style="font-size:25px; text-align:center;"><b>{{ prediction_text }}</b></p>
+  </div>
+</body>
+</html>
+
